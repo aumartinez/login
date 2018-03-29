@@ -9,7 +9,7 @@ header('HTTP/1.0 401 Unauthorized');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MySearch Front</title>
+<title>Login page</title>
 <?php include 'inc/meta.php';?>
 </head>
 <body class="signin">
