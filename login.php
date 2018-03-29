@@ -74,7 +74,7 @@ header('HTTP/1.0 401 Unauthorized');
 						$newcrypted = crypt($originalpass, $newsalt);
 						$newpass = $newcrypted;
 						
-						$sql =	"UPDATE kb_users
+						$sql =	"UPDATE table_users
 						SET userpass1 = '$newpass', userpass2= '$newsalt'
 						WHERE username = '$username'";
 						
