@@ -33,7 +33,7 @@ header('HTTP/1.0 401 Unauthorized');
 					include 'inc/functions.php';
 					
 					$getUser =	"SELECT *
-					FROM kb_users
+					FROM table_users
 					WHERE username = '$username'";
 					
 					$getUserQuery = mysqli_query($conx, $getUser);
@@ -52,7 +52,7 @@ header('HTTP/1.0 401 Unauthorized');
 					$userpass = $crypted;
 					
 					$matchPass =	"SELECT *
-					FROM kb_users
+					FROM table_users
 					WHERE username = '$username' 
 					AND userpass1 = '$userpass'";
 					
