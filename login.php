@@ -70,8 +70,9 @@ header('HTTP/1.0 401 Unauthorized');
 						$_SESSION['logged'] = true;
 						$_SESSION['username'] = $username;			
 						
-						$newsalt = '_'.generateRandomString(2).'..'.generateRandomString(4);
-						$newcrypted = crypt($originalpass, $newsalt);
+						//SHA-512 hash
+						$newsalt = '$6$rounds=5000$'.generateRandomString(8).'$';
+						$newcrypted = substr(crypt($originalpass, $newsalt),strlen($newsalt));
 						$newpass = $newcrypted;
 						
 						$sql =	"UPDATE table_users
