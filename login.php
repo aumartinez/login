@@ -15,8 +15,8 @@ header('HTTP/1.0 401 Unauthorized');
 <body class="signin">
 
 <div class="container">
-	<section id="body-content" class="row">
-  <div class="col-xs-8">
+	<div id="body-content" class="row">
+  <div class="col-xs-8 center-col">
 <?php
 
 			$username = "";
@@ -125,7 +125,7 @@ header('HTTP/1.0 401 Unauthorized');
 			}
 ?>
 	</div>	
-	</section>
+	</div>
 </div>
 
 <?php include 'inc/bottomscripts.php'; ?>
