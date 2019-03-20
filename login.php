@@ -16,7 +16,7 @@ header('HTTP/1.0 401 Unauthorized');
 
 <div class="container">
 	<div id="body-content" class="row">
-  <div class="col-xs-8 center-col">
+  <div class="col-xs-8 centered">
 <?php
 
 			$username = "";
