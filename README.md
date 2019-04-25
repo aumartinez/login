@@ -1,4 +1,4 @@
-# Simple Login page
+# A Simple Login page
 A simple PHP login script.
 
 ## Some asumptions
