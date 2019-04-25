@@ -18,7 +18,6 @@ if(isset($_SESSION['username'])){
 	$user = $_SESSION['username'];	
 }
 
-include 'inc/functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
