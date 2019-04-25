@@ -1,11 +1,11 @@
 /*Center BS column*/
 .centered{
-    margin:auto;
-    float:none;
+  margin:auto;
+  float:none;
 }
 
 .red-text{
-    color:red;
+  color:red;
 }
 
 .right {
@@ -21,4 +21,16 @@
 
 .navitems li {
   display: inline-block;
+}
+
+/*Login form*/
+
+.form-signin {
+  max-width:330px;
+  padding: 15px;
+  margin: 3em auto 0;
+}
+
+.form-signin input {
+  margin-bottom: 5px;
 }
