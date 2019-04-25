@@ -10,7 +10,7 @@ else{
 }
 
 if(!$logged){
-	header('Location:logout.php');
+	header('Location:login.php');
 	exit();
 }
 
