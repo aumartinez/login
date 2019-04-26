@@ -5,7 +5,7 @@
    session_start();
    header('HTTP/1.0 401 Unauthorized');
    
-   ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -31,7 +31,7 @@
                   		include 'inc/functions.php';
                   		
                   		$getUser =	"SELECT *
-                  		FROM table_users
+                  		FROM demo_users
                   		WHERE username = '$username'";
                   		
                   		$getUserQuery = mysqli_query($conx, $getUser);
@@ -47,10 +47,10 @@
                   		
                   		$crypted = trim(crypt($userpass, $salt));
                   		
-                  		$userpass = $crypted;
+                  		$userpass = substr($crypted,strlen($salt)); //Remove salt from pass
                   		
                   		$matchPass =	"SELECT *
-                  		FROM table_users
+                  		FROM demo_users
                   		WHERE username = '$username' 
                   		AND userpass1 = '$userpass'";
                   		
@@ -63,17 +63,17 @@
                   		$numrows = mysqli_num_rows($matchPassQuery);
                   		
                   		mysqli_free_result($matchPassQuery);
-                  												
-                  		if($numrows == 1){
+						
+						if($numrows == 1){
                   			$_SESSION['logged'] = true;
                   			$_SESSION['username'] = $username;			
                   			
                   			//SHA-512 hash
-                  			$newsalt = '$6$rounds=5000$'.generateRandomString(8).'$';
+                  			$newsalt = '$6$rounds=5000$'.generateRandomString(8).'$';						
                   			$newcrypted = substr(crypt($originalpass, $newsalt),strlen($newsalt));
                   			$newpass = $newcrypted;
                   			
-                  			$sql =	"UPDATE table_users
+                  			$sql =	"UPDATE demo_users
                   			SET userpass1 = '$newpass', userpass2= '$newsalt'
                   			WHERE username = '$username'";
                   			
@@ -96,8 +96,10 @@
                   		}
                   	}
                   	
-                  	$_SESSION['logged'] = false;
-                  	header_remove(); 
+					else{
+						$_SESSION['logged'] = false;
+						header_remove(); 		
+					}
                   }
                   ?>
                <form id="login-form" name="login" class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
@@ -122,7 +124,7 @@
 		 
 		 <div class="row">
 		   <div class="col-xs-8 centered">
-			 <p>Try this<br />
+			 <p class="text-center">Try this<br />
 			 User: guest<br />
 			 Pass: Test
 		   </div>
