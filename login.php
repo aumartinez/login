@@ -12,7 +12,7 @@
       <title>Login page</title>
       <?php include 'inc/meta.php';?>
    </head>
-   <body>
+   <body class="signin">
       <div class="container">
          <div class="row">
             <div class="col-xs-8 centered">
