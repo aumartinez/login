@@ -16,17 +16,6 @@
   float: right;
 }
 
-/*Nav bar*/
-.nav .navitems {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navitems li {
-  display: inline-block;
-}
-
 /*Login form*/
 
 .form-signin {
