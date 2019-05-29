@@ -118,7 +118,8 @@ if($submit){
 					echo "</h3>\n";
 				}
 			}
-?>      </div>
+?>      
+        </div>
 	</section>
 </div>
 <?php include 'inc/bottomscripts.php'; ?>
